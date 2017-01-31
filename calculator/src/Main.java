@@ -18,6 +18,7 @@ public class Main {
         System.out.println("Sum is " + sum);
         System.out.println("Difference is " + diff);
         System.out.println("Multiplication is " + multiply);
+        //division
         if(opperand2 == 0){
             System.out.println("Error.Can't division on zero.");
         }else {
