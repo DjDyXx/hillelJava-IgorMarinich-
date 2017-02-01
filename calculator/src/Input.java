@@ -49,9 +49,9 @@ public class Input {
         }
     }
 
-    private static boolean isNumeric(String s) throws NumberFormatException {
+    private static boolean isNumeric(String operand) throws NumberFormatException {
         try {
-            Double.parseDouble(s);
+            Double.parseDouble(operand);
             return true;
         } catch (NumberFormatException e) {
             return false;

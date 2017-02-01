@@ -22,7 +22,6 @@ public class Calculator {
                     System.out.println("Error.Can't division on zero.");
                 } else {
                     System.out.println("Division is " + operand1 / operand2);
-
                 }
                 break;
         }
