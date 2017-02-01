@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /**
  * Created by DyXx on 31.01.2017.
  */
@@ -8,14 +6,14 @@ public class Main {
         System.out.println("Welcome to the calculator 3000");
 
         System.out.println("Please input first number : ");
-        Input.getOperand1();
+        double operand1 = Input.getOperand1();
 
         System.out.println("Please input second number : ");
-        Input.getOperand2();
+        double operand2 = Input.getOperand2();
 
         System.out.println("Please eneter an operation : ");
+        String operation = Input.getOperation();
 
-        Input.getOperation();
-
+        Calculator.calculateBasicOperations(operation, operand1, operand2);
     }
 }
