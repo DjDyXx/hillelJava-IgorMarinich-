@@ -9,13 +9,13 @@ public class Main {
         Scanner operand = new Scanner(System.in);
         System.out.println("How many numbers will be?");
         int amount = operand.nextInt();
-        int buff = amount;
+        int counter = 1;
         double sum = 0;
-        while (buff>0){
-            System.out.println("Enter a " + "№"+buff +" number");
-            buff--;
-            double buff1 = operand.nextDouble();
-            sum+=buff1;
+        while (counter<=amount){
+            System.out.println("Enter a " + "№"+counter+" number");
+            counter++;
+            double buffNumber = operand.nextDouble();
+            sum+=buffNumber;
         }
         double result = sum/amount;
         System.out.println("Your Average of " + amount + " numbers is " + result);
