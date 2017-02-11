@@ -5,7 +5,6 @@ import java.util.Scanner;
  */
 public class Chess {
     public static void main(String[] args) {
-        //CHESS POSITIONS IN REACTANGLE
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter width of rectangle : ");
         int width = sc.nextInt();
@@ -14,11 +13,9 @@ public class Chess {
 
         for (int i = 0; i < length; i++) {
             for (int k = 0; k < width; k++) {
-                if (i % 2 == 0 || k == 0) {
+                if (i % 2 == 0) {
                     System.out.print("* ");
-                }else if(k==width-1){
-                    System.out.print("*");
-                }else {
+                } else {
                     System.out.print(" *");
                 }
             }
