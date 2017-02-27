@@ -1,20 +1,27 @@
-import java.util.Objects;
-
 /**
  * Created by DyXx on 25.02.2017.
  */
-public class Wild extends Animal{
+public abstract class Wild extends Animal {
     private boolean isPredator;
 
-    public Wild(boolean isPredator) {
+    public boolean isPredator() {
+        return isPredator;
+    }
+
+    public void setPredator(boolean predator) {
+        isPredator = predator;
+    }
+
+    public Wild(int id, int age, int weight, String color, boolean isPredator) {
+        super(id, age, weight, color);
         this.isPredator = isPredator;
     }
 
-    @Override
-    public void voice() {
-        System.out.print("Hello , I am a wild animal");
-        if (this.isPredator){
-            System.out.print(" and I am angry ");
+    public String voice(){
+        if(isPredator()){
+            return super.voice()+"I am a wild animal and I am angry.";
+        }else{
+            return super.voice()+"I am a wild animal.";
         }
     }
 }

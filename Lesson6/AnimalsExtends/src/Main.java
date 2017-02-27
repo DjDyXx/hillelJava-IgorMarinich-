@@ -3,7 +3,7 @@
  */
 public class Main {
     public static void main(String[] args) {
-        Cat newcat = new Cat();
-        newcat.voice();
+        GuideDog sharik = new GuideDog(1,10,35, "Black", "Sharik",true,true);
+        System.out.println(sharik.voice());
     }
 }
