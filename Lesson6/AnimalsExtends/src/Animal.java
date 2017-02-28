@@ -10,7 +10,7 @@
  * если собака-поводырь и дрессированная “I can take you home.”
  * рыбка отличается от всех ее реплика “....”
  */
-public class Animal {
+public abstract class Animal {
     private int id;
     private int age;
     private int weight;
