@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.ListIterator;
 
 /**
- * public boolean remove(Object o);
  * public boolean addAll(MyCollection c);
  * public void clear();
  * public boolean retainAll(MyCollection c);
@@ -14,156 +13,120 @@ import java.util.ListIterator;
  * 2. Реализовать интерфейс Iterable для своих реализаций ArrayList и LinkedList
  * 3. Добавить алгоритмы поиска в контейнеры
  */
-public class MyLinkedList implements List {
-    private MyNode first;
+public class MyLinkedList implements Iterable {
+    private MyNode first = null;
+    private MyNode lastAdded = null;
     private MyNode object;
+    private MyNode tempObject = object;
     private int size = 0;
 
-    @Override
     public int size() {
         return this.size;
     }
 
-    @Override
     public boolean isEmpty() {
-        return first == null;
+        return size == 0;
     }
 
-    @Override
     public boolean contains(Object o) {
-        int tempSize = this.size;
-        while (tempSize!=0) {
-            if (object.getObject().equals(o)) {
+        MyNode tempFirst = first;
+        while (tempFirst != null) {
+            if (tempFirst.getObject().equals(o)) {
                 return true;
-            } else {
-                object = object.getNext();
-                tempSize--;
             }
+            tempFirst = tempFirst.getNext();
         }
         return false;
     }
 
-    @Override
     public boolean add(Object o) {
-        if (object == null) {
-            object = first = new MyNode(o, null);
+        if (first == null) {
+            object = first = lastAdded = new MyNode(o);
             this.size = 1;
             return true;
-        } else if (object != null) {
-            object = new MyNode(o, object);
+        }
+        if (size >= 1) {
+            MyNode newNode = new MyNode(o);
+            lastAdded.setNext(newNode);
+            lastAdded = newNode;
             this.size++;
             return true;
         }
+
         return false;
     }
 
-    @Override
     public boolean remove(Object o) {
-
-        int tempSize = this.size;
-        MyNode tempObject = object;
-        if (!isEmpty()){
-            while (tempSize!=0) {
-                if (object.getObject().equals(o)) {
-                    //object.setNext();
+        MyNode currentObject = first;
+        MyNode previous = null;
+        while (currentObject != null) {
+            if (currentObject.getObject().equals(o)) {
+                if (currentObject == first) {
+                    first = currentObject.getNext();
+                    size--;
+                    return true;
+                } else if (currentObject == lastAdded) {
+                    lastAdded = previous;
+                    lastAdded.setNext(null);
                     size--;
                     return true;
                 } else {
-                    object = object.getNext();
-                    tempSize--;
+                    previous.setNext(currentObject.getNext());
+                    size--;
+                    return true;
                 }
-            }
+            }previous = currentObject;
+            currentObject = currentObject.getNext();
         }
         return false;
     }
 
-    @Override
-    public boolean addAll(Collection c) {
-        return false;
-    }
 
-    @Override
-    public boolean addAll(int index, Collection c) {
-        return false;
-    }
-
-    @Override
-    public void clear() {
-
-    }
-
-    @Override
-    public Object get(int index) {
-        return null;
-    }
-
-    @Override
-    public Object set(int index, Object element) {
-        return null;
-    }
-
-    @Override
-    public void add(int index, Object element) {
-
-    }
-
-    @Override
-    public Object remove(int index) {
-        return null;
-    }
-
-    @Override
-    public int indexOf(Object o) {
-        return 0;
-    }
-
-    @Override
-    public int lastIndexOf(Object o) {
-        return 0;
-    }
-
-    @Override
-    public ListIterator listIterator() {
-        return null;
-    }
-
-    @Override
-    public ListIterator listIterator(int index) {
-        return null;
-    }
-
-    @Override
-    public List subList(int fromIndex, int toIndex) {
-        return null;
-    }
-
-    @Override
-    public boolean retainAll(Collection c) {
-        return false;
-    }
-
-    @Override
-    public boolean removeAll(Collection c) {
-        return false;
-    }
-
-    @Override
-    public boolean containsAll(Collection c) {
-        return false;
-    }
-
-    @Override
-    public Object[] toArray(Object[] a) {
-        return new Object[0];
-    }
-
-    @Override
+    //    @Override
+//    public boolean remove(Object o) {
+//        int tempSize = this.size;
+//        if (!isEmpty()) {
+//            while (tempSize != 0) {
+//                MyNode tempNextObject = object.getNext();
+//                if (tempNextObject==(null)) {
+//                    last = object;
+//                    size--;
+//                    return true;
+//                } else {
+//                    if (tempNextObject.getObject().equals(o)) {
+//                        object.setNext(tempNextObject.getNext());
+//                        object.setNext(object.getNext());
+//                        size--;
+//                        return true;
+//                    }else{
+//                        object = object.getNext();
+//                        tempSize--;
+//                    }
+//                }
+//            }
+//        }return false;
+//    }
+//
+//    public boolean addAll(Collection c) {
+//        return false;
+//    }
+//
+//    public void clear() {
+//    }
+//
+//    public boolean retainAll(Collection c) {
+//        return false;
+//    }
+//
+//    public boolean removeAll(Collection c) {
+//        return false;
+//    }
+//
+//    public boolean containsAll(Collection c) {
+//        return false;
+//    }
+//
     public Iterator iterator() {
         return null;
-    }
-
-    @Override
-    public Object[] toArray() {
-        return new Object[0];
     }
 }
