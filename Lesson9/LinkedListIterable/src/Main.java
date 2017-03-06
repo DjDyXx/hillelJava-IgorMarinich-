@@ -1,9 +1,9 @@
 /**
- * Created by DyXx on 03.03.2017.
+ * Created by DyXx on 06.03.2017.
  */
 public class Main {
     public static void main(String[] args) {
-        MyLinkedList list = new MyLinkedList();
+        MyLinkedListIterable list = new MyLinkedListIterable();
         list.add("hello1");
         list.add("hello2");
         list.add("hello3");
@@ -11,7 +11,7 @@ public class Main {
         list.add("hello5");
         list.add("hello6");
 
-        MyLinkedList list2 = new MyLinkedList();
+        MyLinkedListIterable list2 = new MyLinkedListIterable();
         list2.add("hello1");
         list2.add("hello2");
         list2.add("hello3");
@@ -31,7 +31,7 @@ public class Main {
 //
 //        System.out.println("----");
 //
-//        MyLinkedList list2 = new MyLinkedList();
+//        MyLinkedListIterable list2 = new MyLinkedListIterable();
 //        list2.add("hello5");
 //        list2.add("hello6");
 //        list2.add("hello7");
@@ -49,3 +49,4 @@ public class Main {
 
     }
 }
+

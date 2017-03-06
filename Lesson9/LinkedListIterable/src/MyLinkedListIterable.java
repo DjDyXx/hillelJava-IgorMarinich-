@@ -1,4 +1,13 @@
-public class MyLinkedList {
+import java.util.Iterator;
+
+/**
+ * Created by DyXx on 06.03.2017.
+ * implements Iterable
+ * public Iterator iterator() {
+ * return null;
+ * }
+ */
+public class MyLinkedListIterable implements Iterable{
     private MyNode first = null;
     private MyNode lastAdded = null;
     private int size = 0;
@@ -76,7 +85,7 @@ public class MyLinkedList {
     }
 
 
-    public boolean addAll(MyLinkedList c) {
+    public boolean addAll(MyLinkedListIterable c) {
         if (c != null) {
             this.lastAdded.setNext(c.getFirst());
             lastAdded = c.getFirst();
@@ -93,7 +102,7 @@ public class MyLinkedList {
     }
 
 
-    public boolean containsAll(MyLinkedList c) {
+    public boolean containsAll(MyLinkedListIterable c) {
         if (this.equals(c)) {
             return true;
         }
@@ -107,18 +116,18 @@ public class MyLinkedList {
         return true;
     }
 
-    public boolean retainAll(MyLinkedList c) {
+    public boolean retainAll(MyLinkedListIterable c) {
         MyNode  tempNode = this.first;
         while (tempNode != null) {
             if (!c.contains(tempNode.getObject())) {
-               this.remove(tempNode.getObject());
+                this.remove(tempNode.getObject());
             }
             tempNode = tempNode.getNext();
         }
         return c.containsAll(this);
     }
 
-    public boolean removeAll(MyLinkedList c) {
+    public boolean removeAll(MyLinkedListIterable c) {
 
         MyNode  tempNode = this.first;
         while (tempNode != null) {
@@ -131,5 +140,9 @@ public class MyLinkedList {
     }
 
 
-
+    @Override
+    public Iterator iterator() {
+        return null;
+    }
 }
+
