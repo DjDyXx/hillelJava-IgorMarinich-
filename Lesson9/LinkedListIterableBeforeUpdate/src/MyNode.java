@@ -4,7 +4,6 @@
 public class MyNode {
     private Object object;
     private MyNode next;
-    private MyNode previous;
 
     public MyNode(Object object) {
         this.object = object;

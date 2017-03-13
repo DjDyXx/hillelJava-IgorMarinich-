@@ -2,10 +2,10 @@ import java.util.Iterator;
 
 /**
  * Created by DyXx on 06.03.2017.
- sort()
- сделать двусвязным
- переопределить метод equals()
- Распечатать связный список в обратном порядке (метод не больше 3-ех строчек)
+ * implements Iterable
+ * public Iterator iterator() {
+ * return null;
+ * }
  */
 public class MyLinkedListIterable implements Iterable{
     private MyNode first = null;
@@ -139,12 +139,6 @@ public class MyLinkedListIterable implements Iterable{
         return !c.containsAll(this);
     }
 
-//    public boolean equals(Object o){
-//        if (this == o){
-//            return true;
-//        }else if()
-//        return false;
-//    }
 
     @Override
     public Iterator iterator() {
