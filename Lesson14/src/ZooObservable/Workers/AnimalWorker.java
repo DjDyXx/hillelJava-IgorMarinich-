@@ -1,7 +1,6 @@
 package ZooObservable.Workers;
 
 import ZooObservable.Animal.Animal;
-import ZooObservable.Observer;
 
 import java.util.List;
 

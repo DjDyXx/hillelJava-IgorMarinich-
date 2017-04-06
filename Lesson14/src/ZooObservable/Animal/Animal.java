@@ -1,7 +1,6 @@
 package ZooObservable.Animal;
 
-import ZooObservable.Observable;
-import ZooObservable.Observer;
+import ZooObservable.Workers.Observer;
 import ZooObservable.Workers.*;
 
 import java.util.ArrayList;

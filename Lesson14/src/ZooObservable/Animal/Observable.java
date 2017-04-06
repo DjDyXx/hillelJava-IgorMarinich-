@@ -1,4 +1,4 @@
-package ZooObservable;
+package ZooObservable.Animal;
 
 import ZooObservable.Workers.Worker;
 
