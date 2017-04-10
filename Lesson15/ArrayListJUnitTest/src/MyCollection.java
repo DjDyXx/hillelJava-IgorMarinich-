@@ -1,6 +1,7 @@
 public class MyCollection {
     private Object[] array;
 
+
     public MyCollection(int size) {
         this.array = new Object[size];
     }
@@ -10,8 +11,8 @@ public class MyCollection {
     }
 
     public boolean isEmpty() {
-        for (int i = 0; i < this.array.length; i++) {
-            if (this.array[i] != null) {
+        for (Object anArray : this.array) {
+            if (anArray != null) {
                 return false;
             }
         }
@@ -19,8 +20,8 @@ public class MyCollection {
     }
 
     public boolean contains(Object object) {
-        for (int i = 0; i < this.array.length; i++) {
-            if (this.array[i].equals(object)) {
+        for (Object anArray : this.array) {
+            if (anArray.equals(object)) {
                 return true;
             }
         }
@@ -67,9 +68,9 @@ public class MyCollection {
     }
 
     public void retainAll(MyCollection collection) {
-        for (int i = 0; i < this.array.length; i++) {
-            if (!collection.contains(this.array[i])) {
-                this.remove(this.array[i]);
+        for (Object anArray : this.array) {
+            if (!collection.contains(anArray)) {
+                this.remove(anArray);
             }
         }
     }
@@ -81,8 +82,8 @@ public class MyCollection {
     public boolean containsAll(MyCollection collection) {
         int counter = 0;
         for (int i = 0; i < collection.array.length; i++) {
-            for (int j = 0; j < this.array.length; j++) {
-                if (collection.array[i] == this.array[j]) {
+            for (Object anArray : this.array) {
+                if (collection.array[i] == anArray) {
                     counter++;
                 }
             }
