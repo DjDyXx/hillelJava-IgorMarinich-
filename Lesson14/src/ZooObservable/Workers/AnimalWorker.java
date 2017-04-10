@@ -6,6 +6,5 @@ import java.util.List;
 
 public interface AnimalWorker extends Observer {
     List<Animal> getAnimals();
-
     String getSurName();
 }
