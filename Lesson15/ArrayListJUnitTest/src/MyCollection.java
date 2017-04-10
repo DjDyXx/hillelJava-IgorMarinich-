@@ -1,7 +1,6 @@
 public class MyCollection {
     private Object[] array;
 
-
     public MyCollection(int size) {
         this.array = new Object[size];
     }
@@ -53,11 +52,12 @@ public class MyCollection {
 
     public void addAll(MyCollection collection) {
         Object[] newArray = new Object[this.array.length + collection.array.length];
+
         for (int i = 0; i < array.length; i++) {
             newArray[i] = this.array[i];
         }
         for (int i = 0; i < collection.array.length; i++) {
-            newArray[this.array.length - 1 + i] = collection.array[i];
+            newArray[i+this.array.length] = collection.array[i];
         }
         this.array = newArray;
     }
@@ -76,7 +76,15 @@ public class MyCollection {
     }
 
     public void removeAll(MyCollection collection) {
-        MyCollection removedCollection = new MyCollection(collection.size());
+        Object[] newArray = new Object[this.size()-collection.size()];
+        for (int i = 0;i<this.size();i++){
+            for (int j = 0;j<collection.size();i++){
+                if (array[i]!=collection.array[i]){
+                    newArray[i] = array[i];
+                }
+            }
+        }
+        this.array = newArray;
     }
 
     public boolean containsAll(MyCollection collection) {
