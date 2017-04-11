@@ -1,8 +1,8 @@
 public class MyCollection {
     private Object[] array;
 
-    public MyCollection(int size) {
-        this.array = new Object[size];
+    public MyCollection() {
+        this.array = new Object[0];
     }
 
     public int size() {
@@ -37,7 +37,7 @@ public class MyCollection {
     }
 
     public void remove(Object object) {
-        MyCollection newCollection = new MyCollection(0);
+        MyCollection newCollection = new MyCollection();
         for (int i = 0;i<this.array.length;i++){
             if (this.array[i]!= object){
                 newCollection.add(this.array[i]);

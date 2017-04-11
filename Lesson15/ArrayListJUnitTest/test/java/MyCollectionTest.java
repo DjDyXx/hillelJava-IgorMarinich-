@@ -7,7 +7,7 @@ public class MyCollectionTest {
 
     @Before
     public void setup() {
-        newArrayList = new MyCollection(0);
+        newArrayList = new MyCollection();
     }
 
     @Test
@@ -43,16 +43,16 @@ public class MyCollectionTest {
     }
 
     @Test
-    public void testAddSixth() {
-       MyCollection newMyArrayList = new MyCollection(5);
+    public void testAdd() {
+       MyCollection newMyArrayList = new MyCollection();
        newMyArrayList.add(2);
-       assertEquals(true, newMyArrayList.contains(2));
+       assertEquals(true,newMyArrayList.contains(2));
     }
 
     @Test
     public void testAddCheckSize() {
         newArrayList.add(2);
-        assertEquals(true,newArrayList.contains(2));
+        assertEquals(true,newArrayList.size()==1);
     }
 
     @Test
@@ -98,7 +98,7 @@ public class MyCollectionTest {
 
     @Test
     public void addAll(){
-        MyCollection testCollection = new MyCollection(0);
+        MyCollection testCollection = new MyCollection();
         testCollection.add(5);
         testCollection.add(10);
         testCollection.add(51);
@@ -127,7 +127,7 @@ public class MyCollectionTest {
 
     @Test
     public void retainAll(){
-        MyCollection testCollection = new MyCollection(0);
+        MyCollection testCollection = new MyCollection();
         testCollection.add(5);
         testCollection.add(10);
         testCollection.add(51);
@@ -145,7 +145,7 @@ public class MyCollectionTest {
 
     @Test
     public void removeAll(){
-        MyCollection testCollection = new MyCollection(0);
+        MyCollection testCollection = new MyCollection();
         testCollection.add(5);
         testCollection.add(10);
         newArrayList.add(5);
@@ -164,7 +164,7 @@ public class MyCollectionTest {
 
     @Test
     public void containsAll(){
-        MyCollection testCollection = new MyCollection(0);
+        MyCollection testCollection = new MyCollection();
         testCollection.add(5);
         testCollection.add(10);
         testCollection.add(11);
