@@ -76,15 +76,13 @@ public class MyCollection {
     }
 
     public void removeAll(MyCollection collection) {
-        Object[] newArray = new Object[this.size()-collection.size()];
-        for (int i = 0;i<this.size();i++){
-            for (int j = 0;j<collection.size();i++){
-                if (array[i]!=collection.array[i]){
-                    newArray[i] = array[i];
-                }
-            }
-        }
-        this.array = newArray;
+      for(int i = 0;i<collection.size();i++){
+          for (int j = 0;j<this.size();j++){
+              if (collection.array[i]==this.array[j]){
+                  this.remove(collection.array[i]);
+              }
+          }
+      }
     }
 
     public boolean containsAll(MyCollection collection) {

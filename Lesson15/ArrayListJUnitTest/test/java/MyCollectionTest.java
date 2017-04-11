@@ -124,7 +124,9 @@ public class MyCollectionTest {
         assertEquals(true,newArrayList.contains(5));
         assertEquals(true,newArrayList.contains(10));
         assertEquals(true,newArrayList.contains(103));
+        assertEquals(true,newArrayList.size()==3);
         newArrayList.removeAll(testCollection);
+        assertEquals(true,newArrayList.size()==1);
         assertEquals(true,newArrayList.contains(103));
         assertEquals(false,newArrayList.contains(5));
         assertEquals(false,newArrayList.contains(10));
@@ -135,9 +137,12 @@ public class MyCollectionTest {
         MyCollection testCollection = new MyCollection(0);
         testCollection.add(5);
         testCollection.add(10);
+        testCollection.add(11);
         newArrayList.add(5);
         newArrayList.add(10);
         newArrayList.add(103);
+        assertEquals(false,newArrayList.containsAll(testCollection));
+        testCollection.remove(11);
         assertEquals(true,newArrayList.containsAll(testCollection));
 
     }
