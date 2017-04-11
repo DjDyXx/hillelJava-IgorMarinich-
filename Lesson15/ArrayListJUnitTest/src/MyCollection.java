@@ -10,12 +10,7 @@ public class MyCollection {
     }
 
     public boolean isEmpty() {
-        for (Object anArray : this.array) {
-            if (anArray != null) {
-                return false;
-            }
-        }
-        return true;
+        return size()==0;
     }
 
     public boolean contains(Object object) {
