@@ -19,8 +19,8 @@ public class MyCollection {
     }
 
     public boolean contains(Object object) {
-        for (Object anArray : this.array) {
-            if (anArray.equals(object)) {
+        for (int i = 0;i<this.array.length;i++){
+            if (this.array[i]==object){
                 return true;
             }
         }
@@ -37,17 +37,13 @@ public class MyCollection {
     }
 
     public void remove(Object object) {
-        Object[] newArray = new Object[array.length - 1];
-        for (int i = 0; i < newArray.length; i++) {
-            if (object == this.array[i]) {
-                for (; i < newArray.length; i++) {
-                    newArray[i] = this.array[i + 1];
-                }
-            } else {
-                newArray[i] = this.array[i];
+        MyCollection newCollection = new MyCollection(0);
+        for (int i = 0;i<this.array.length;i++){
+            if (this.array[i]!= object){
+                newCollection.add(this.array[i]);
             }
         }
-        this.array = newArray;
+        this.array = newCollection.array;
     }
 
     public void addAll(MyCollection collection) {

@@ -43,13 +43,14 @@ public class MyCollectionTest {
     }
 
     @Test
-    public void testAdd() {
-       newArrayList.add(2);
-        assertTrue("hey no", newArrayList.size() == 1);
+    public void testAddSixth() {
+       MyCollection newMyArrayList = new MyCollection(5);
+       newMyArrayList.add(2);
+       assertEquals(true, newMyArrayList.contains(2));
     }
 
     @Test
-    public void testAdd2() {
+    public void testAddCheckSize() {
         newArrayList.add(2);
         assertEquals(true,newArrayList.contains(2));
     }
@@ -63,6 +64,35 @@ public class MyCollectionTest {
         newArrayList.remove(1);
         newArrayList.remove(2);
         newArrayList.remove(3);
+        assertEquals(true,newArrayList.size()==0);
+    }
+
+    @Test
+    public void removeLast(){
+        newArrayList.add(1);
+        newArrayList.add(2);
+        newArrayList.add(3);
+        assertEquals(true,newArrayList.size()==3);
+        newArrayList.remove(3);
+        assertEquals(true,newArrayList.size()==2);
+        assertEquals(false,newArrayList.contains(3));
+    }
+    @Test
+    public void removeElementThatDoesNotExist(){
+        newArrayList.add(1);
+        assertEquals(true,newArrayList.size()==1);
+        newArrayList.remove(3);
+        assertEquals(true,newArrayList.size()==1);
+    }
+
+    @Test
+    public void removeEdentity(){
+        newArrayList.add(1);
+        newArrayList.add(2);
+        newArrayList.add(2);
+        assertEquals(true,newArrayList.size()==3);
+        newArrayList.remove(1);
+        newArrayList.remove(2);
         assertEquals(true,newArrayList.size()==0);
     }
 
