@@ -20,7 +20,7 @@ public class MyCollectionTest {
     }
 
     @Test
-    public void isEmpty323(){
+    public void isEmpty3233(){
         assertEquals(true,newArrayList.size()==0);
         newArrayList.add(1);
         newArrayList.add(2);
