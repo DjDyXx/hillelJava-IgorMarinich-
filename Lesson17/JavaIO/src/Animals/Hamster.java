@@ -1,6 +1,7 @@
 package Animals;
 
 public class Hamster extends Domestic {
+    public static final long serialVersionUID = 36L;
     private boolean isSportsman;
 
     public Hamster(int id, int age, int weight, String color, String name, boolean isVactinated, boolean isSportsman) {

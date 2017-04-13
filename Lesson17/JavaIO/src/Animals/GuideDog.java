@@ -1,6 +1,7 @@
 package Animals;
 
 public class GuideDog extends Domestic {
+    public static final long serialVersionUID = 35L;
     private boolean isTrained;
 
     public GuideDog(int id, int age, int weight, String color, String name, boolean isVactinated, boolean isTrained) {

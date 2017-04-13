@@ -1,6 +1,7 @@
 package Animals;
 
 public abstract class Domestic extends Animal {
+    public static final long serialVersionUID = 22L;
     private String name;
     private boolean isVactinated;
 

@@ -1,6 +1,7 @@
 package Animals;
 
 public abstract class Wild extends Animal {
+    public static final long serialVersionUID = 2L;
     private boolean isPredator;
 
     public boolean isPredator() {
